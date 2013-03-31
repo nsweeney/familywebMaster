@@ -1,0 +1,61 @@
+//create it
+$ rails new Treehouse Rails Project
+$ cd Treehouse Rails Project
+
+page @ 127.0.0.1:3000
+
+//generate scaffold status w/name and content field
+$ rails generate scaffold status name:string content:text
+//above adds to database, update db like this
+$ rake db:migrate
+
+//goto 127.0.0.1:3000/statuses to see new things added
+
+//upload to github
+$ git init
+
+$ git add .   //add all things in current directory and ones beneth it
+
+//commit uploads files and freezes project at that moment in time
+$ git commit -m "Created rails app and added status updates."
+
+//setup new repositry you will push to on github.com first!
+//here I made it familyweb
+//below line makes dir we jst added locally go there
+$ git remote add origin git@github.com:nsweeney/familyweb.git
+
+//now we push it to github
+$ git push -u origin master
+
+//will say something like
+* To git@github.com:nsweeney/familyweb.git
+** [new branch]   master - > master
+* Branch master set up to track remote branch master from origin.
+
+//Copy down a repository for local editing from github
+*under SSH tab is URL you need to copy
+$ cd (into directory you want to copy project into)
+
+$ git clone 'paste URL here no quotes'
+
+$ git log     //shows github commits
+
+//if no rails -v
+gem install rails
+
+//if you copy this to another machine other than original one
+//use this command to install dependencies
+$ bundle
+
+//this one to setup databases
+//this database woulnt have some info as one created on the 
+//other machine, this just creates an empty db for use with app
+$ rake db:create:all
+$ rake db:migrate   //migrates in the info we created with rails g scaffold status name:string content:text
+
+//In this app we copied in bootstrao css, javascript and images to assets folder for use
+
+
+
+
+

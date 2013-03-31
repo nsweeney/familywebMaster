@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<!--*This is where set things to apply to every page-->
+
 <html>
 <head>
   <title>FamilywebTreehouseTreebookApp</title>
@@ -7,8 +10,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<!--alot of info on how to set this structure up on bootstrap site, can copy in examples to use-->
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="#" class="brand">Family Web</a>
+				<ul class="nav"> <!--used to add regular links to nav bar-->
+					<li><%= link_to "All Statuses", statuses_path %></li>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+				<%= yield %>
+			</div>
 </body>
 </html>
