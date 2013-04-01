@@ -1,6 +1,13 @@
 FamilywebTreehouseTreebookApp::Application.routes.draw do
-  resources :statuses
+  devise_for :users
 
+  
+  
+  #below line means when going to root of website (StatusesController action index is displayed)
+  #also to make this work must delete public/index.html file
+  resources :statuses
+  root to: 'statuses#index'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

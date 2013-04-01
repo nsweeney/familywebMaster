@@ -55,7 +55,62 @@ $ rake db:migrate   //migrates in the info we created with rails g scaffold stat
 
 //In this app we copied in bootstrao css, javascript and images to assets folder for use
 
+//used to pull changes from github into existing project
+$ git pull
 
+// use devise to create login authentication system
+//add gem 'devise' in the below area of the Gemfile
+///////////////////////////////////////////////
+source 'https://rubygems.org'
 
+gem 'rails', '3.2.13'
+
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+gem 'sqlite3'
+gem 'devise'
+///////////////////////////////////////////////
+
+//next we type bundle in console to install that new gem
+$bundle
+ 
+//now we install devise
+$rails generate devise:install
+//follow instructions after install of devise
+
+// now we use devise to create user model for this app ("user" being the name we gave the model ) - one thing this does is create db table with fields and types
+$rails generate devise user
+
+//add these 3 (t.string)lines to the new migrate file
+class DeviseCreateUsers < ActiveRecord::Migration
+  def change
+    create_table(:users) do |t|
+      # Only thing I added was the below 3 lines.
+      t.string :first_name
+      t.string :last_name
+      t.string :profile_name
+////////////////////////////////////////////////////////
+
+//now we add the migration to db with-
+$rake db:migrate
+ 
+//find new routes for use with-
+$rake routes
+
+//install devise views so we can edit them to our liking
+$rails generate devise:views
+
+//will modify signup page at views/devise/registrations/new.html.erb
+//we added some fields (first name, last name, username) so we must add those like this to models/user so they can be assigned without error
+*attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :profile_name
+
+//we can load a rails app into an interactive console like this (irb) * shutdown server FIRST!
+$rails console
+irb> user = User.first 	//find first user
+irb> user.destroy		//delete that chosen user
+irb> exit				//leaves console
+
+//
 
 
