@@ -111,6 +111,38 @@ irb> user = User.first 	//find first user
 irb> user.destroy		//delete that chosen user
 irb> exit				//leaves console
 
-//
+//Create relationship between statuses and users with a database migration
+$rails generate migration add_user_id_to_statuses
+
+//now open that new file in db/migratre and edit contents of change method
+//now run the migrate
+$rake db:migrate
+
+//now we delete the old statuses we created
+$rails c
+irb>Status.delete_all
+irb>exit
+
+//after all that well commit the work again to github
+$git add .
+$git status 	//shows updated things and deleted files at bottom
+//we deleted public/index.html
+//we have to further delete it like this
+$git rm public/index.html
+
+//now well actually commit all changes
+$git commit -m "message about the changes weve made"
+$git push
+
+//since the name field was removed from database, there are a number of places that that change needs to be modified, see vieo "customizing forms/getting-the-latest-changes"
+//in this project there where edits needed @ statuses/show.html.erb, status.rb, index.html.erb and _form.html.erb
+
+//now we install tool "simple_form" that helps with installing new forms *info @ github.com/plataformatec/simple_form/
+gem 'simple_form' added to gemfile
+$bundle install
+$rails g simple_form:install --bootstrap  //--bootstrap if you copied in bootstrap items to app
+
+//** When adding and changing things, sometimes rails s needs a restart (be sure its actually off) to work correctly
+
 
 
