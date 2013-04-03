@@ -1,12 +1,20 @@
 FamilywebTreehouseTreebookApp::Application.routes.draw do
-  devise_for :users
-
+  devise_for :users   #alot of routes already made because of devise install, can modify if needed, see routes wth cmd$ rake routes
   
+  #the follwing makes it so you can type localhost:3000/register and go to sign up page
+  devise_scope :user do
+    get 'register', to: 'devise/registrations#new', as: :register
+    get 'login', to: 'devise/sessions#new', as: :login
+    get 'logout', to: 'devise/sessions#destroy', as: :logout
+  end
   
   #below line means when going to root of website (StatusesController action index is displayed)
   #also to make this work must delete public/index.html file
   resources :statuses
+  get 'feed', to: 'statuses#index', as: :feed  #makes you able to type /feed takes you to same page as /statuses
   root to: 'statuses#index'
+  
+  
   
 
   # The priority is based upon order of creation:
