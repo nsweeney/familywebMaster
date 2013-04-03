@@ -161,7 +161,8 @@ $ruby -Itest test/unit/user_test.rb
 //deleted everything in test/fictures.users.yml
 $ruby -Itest test/unit/user_test.rb //now test passes
 
-
+//can commit all and add message like this
+$git commit -am "this is a commit and an add at same time command"
 
 
 
