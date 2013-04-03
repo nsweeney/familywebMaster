@@ -144,5 +144,46 @@ $rails g simple_form:install --bootstrap  //--bootstrap if you copied in bootstr
 
 //** When adding and changing things, sometimes rails s needs a restart (be sure its actually off) to work correctly
 
+// add more info to a git commit like this
+$git commit
+//on my iMac it opens subl
+//add text to top of it @ end type ":wq"  then save and close
+$git log    //used to verify the info you just typed in
+
+//now we start some tests (make sure you run this in console from root of app)
+$ruby -Itest test/unit/user_test.rb
+//in my case this errored out, until I first ran
+$rake db:migrate
+$rake db:test:prepare  //sets up test database
+//then run test again
+$ruby -Itest test/unit/user_test.rb
+//failed again until I removed 2 lines of code in test/fixtures/statuses.yml that contained "name" and
+//deleted everything in test/fictures.users.yml
+$ruby -Itest test/unit/user_test.rb //now test passes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
