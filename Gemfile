@@ -13,6 +13,10 @@ group :development, :test do  #modified to sqlite3 only used in those 2 envirome
   gem 'sqlite3'
 end
 
+group :production do  #to inlcude postgres db in production env
+  gem 'pg'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -176,13 +176,17 @@ $heroku   // if you see heroku commands its correctly configured
 $ heroku login   //name gmail,,,pword,,band im in capitolize one time number at end
 $ heroku create   //create new app on heroku server
 //now we can use git push heroku master to push to heroku in future
+$git push heroku master   //wont work yet
 // will fail at first since weve been using a sqlite3 database, heroku supports postgres
 // it will be ok to use sqlite in our test/development enviorment and postgres on the actual production enviroment app on heroku
 // we need to disable sqlite3 for the production enviorment
 // modify gemfile
 
+$git push heroku master   //works now
+//after this first push though following the link to the app doest work, use:
+$heroku logs    // to see whats going on 
 
-
+ 
 
 
 
