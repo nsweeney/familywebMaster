@@ -165,8 +165,11 @@ $ruby -Itest test/unit/user_test.rb //now test passes
 $git commit -am "this is a commit and an add at same time command"
 $git push   //push all that back up
 
-
-
+//now we will generate an integration_test
+//* you can see what things you can generate with rails g -help command (here custom_routes is the name)
+$rails g integration_test custom_routes
+// edit the create file in test/integration and run the test
+$rails -Itest test/integration/custom_routes_test.rb
 
 
 

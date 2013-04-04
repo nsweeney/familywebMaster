@@ -3,6 +3,6 @@ class Status < ActiveRecord::Base
   # below line we added to set up db relationship
   belongs_to :user   
   
-  validates :user, presence: true
-  validates :content, presence: true
+  validates :user_id, presence: true
+  validates :content, presence: true, length: { minimum: 2 }
 end

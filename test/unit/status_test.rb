@@ -1,18 +1,25 @@
 require 'test_helper'
 
 class StatusTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
   
-  # test 1 for making sure user name selected
-  #test "a status should have a user name associated with it" do
-   # user = User.new
-   # assert !user.save
-   # assert !user.errors[:user].empty?
- # end     ///the test preceding doesnt work, but the validates I was trying to accomplish, making sure a user name is selected does work from status.rb
+  test "that a status requires content" do
+    status = Status.new
+    assert !status.save
+    assert !status.errors[:content].empty?
+  end
   
-  # test 2 for making sure some content is entered
-  # not sure how to write the test for content either
+  test "that status content is at least 2 letters long" do
+    status = Status.new
+    status.content = "H"
+    assert !status.save
+    assert !status.errors[:content].empty?
+  end
+  
+  test "that a status has a user id" do
+    status = Status.new
+    status.content = "hello"
+    assert !status.save
+    assert !status.errors[:user_id].empty?
+  end
   
 end
