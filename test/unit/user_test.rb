@@ -23,7 +23,9 @@ class UserTest < ActiveSupport::TestCase
   end
  
   test "a user should have a unique profile name" do
-    user = User.new
+    user = User.new(first_name: 'Nick', last_name: "Sween", email: 'nsweenTest@testtest.com')
+    user.password = user.password_confirmation = 'asdasdasd'
+    
     user.profile_name = users(:jason).profile_name  # info for this @ users.yml
     assert !user.save  #makes sure this User used for test is not saved in db
     puts user.errors.inspect
@@ -37,5 +39,13 @@ class UserTest < ActiveSupport::TestCase
     assert !user.errors[:profile_name].empty?
     assert user.errors[:profile_name].include?("Must be formatted correctly.")
   end
-
+  
+  test " a user can have a correctly formated profile name" do
+    user = User.new(first_name: 'Nick', last_name: "Sween", email: 'nsweenTest@testtest.com')
+    user.password = user.password_confirmation = 'asdasdasd'
+    
+    user.profile_name = 'nsweentestest_1'
+    assert user.valid?
+     
+  end
 end
