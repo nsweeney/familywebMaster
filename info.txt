@@ -188,7 +188,15 @@ $heroku logs    // to see whats going on
 //after editing postgress into gemfile correctly, run this because we edited the gemfile
 $bundle install --without production   //without production so you dont install postgress db on our local system
  
+//another git push heroku master //wont work exactly until we migrate db with heroku
 
+$heroku run rake db:migrate
+
+$git push heroku master  //now works and you can follow the url and its working
+
+//change url name to familyweb
+$heroko apps:rename familyweb
+$heroku open   //open app in browser
 
 
 
