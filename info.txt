@@ -185,7 +185,8 @@ $git push heroku master   //wont work yet
 $git push heroku master   //works now
 //after this first push though following the link to the app doest work, use:
 $heroku logs    // to see whats going on 
-
+//after editing postgress into gemfile correctly, run this because we edited the gemfile
+$bundle install --without production   //without production so you dont install postgress db on our local system
  
 
 
