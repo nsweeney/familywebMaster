@@ -2,5 +2,11 @@ jason:
   first_name: "jason"
   last_name: "ses"
   email: "jes@yes.com"
-  profile_name: 'jtest'
+  profile_name: 'jasontest'
+  
+jim:
+  first_name: "jim"
+  last_name: "ses"
+  email: "jim@yes.com"
+  profile_name: 'jimtest'   
   
