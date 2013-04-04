@@ -8,6 +8,9 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+
+
+
 .clearfix {
   *zoom: 1;
 }
@@ -290,7 +293,10 @@ a:focus {
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
   width: 940px;
+  
+  
 }
+
 
 .span12 {
   width: 940px;
@@ -4395,6 +4401,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .container {
   width: auto;
+  
 }
 
 .nav-collapse.collapse {
@@ -4528,6 +4535,7 @@ input[type="submit"].btn.btn-mini {
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
+          
 }
 
 .navbar-fixed-top,
@@ -4537,15 +4545,19 @@ input[type="submit"].btn.btn-mini {
   left: 0;
   z-index: 1030;
   margin-bottom: 0;
+  
+   
 }
 
 .navbar-fixed-top .navbar-inner,
 .navbar-static-top .navbar-inner {
   border-width: 0 0 1px;
+  
 }
 
 .navbar-fixed-bottom .navbar-inner {
   border-width: 1px 0 0;
+  
 }
 
 .navbar-fixed-top .navbar-inner,
@@ -4560,11 +4572,13 @@ input[type="submit"].btn.btn-mini {
 .navbar-static-top .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
+	
   width: 940px;
 }
 
 .navbar-fixed-top {
   top: 0;
+  
 }
 
 .navbar-fixed-top .navbar-inner,

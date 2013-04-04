@@ -12,8 +12,13 @@
  *= require_tree .
  */
 
+
 body {
 	padding-top: 40px;
+}
+
+.fwnavbar {
+  background-color: #000000; /* fallback color, place your own */
 }
 
 .alert {
