@@ -19,4 +19,14 @@ class User < ActiveRecord::Base
   def full_name 
     first_name + " " + last_name
   end
+  
+  # for taking in a stripping, downcasing users email, making hash of it, then passing that in to the gravatar site
+  def gravatar_url
+    stripped_email = email.strip
+    downcased_email = stripped_email.downcase
+    hash = Digest::MD5.hexdigest(downcased_email)
+    
+    "http://gravatar.com/avatar/#{hash}"
+  end
+    
 end
