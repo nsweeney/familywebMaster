@@ -1,4 +1,6 @@
 FamilywebTreehouseTreebookApp::Application.routes.draw do
+  get "profiles/show"
+
   devise_for :users   #alot of routes already made because of devise install, can modify if needed, see routes wth cmd$ rake routes
   
   #the follwing makes it so you can type localhost:3000/register and go to sign up page
