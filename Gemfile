@@ -9,6 +9,10 @@ gem 'rails', '3.2.13'
 gem 'devise'
 gem 'simple_form'
 
+group :test do
+  gem 'shoulda'
+end
+
 group :development, :test do  #modified to sqlite3 only used in those 2 enviroments (needed for heroku push)
   gem 'sqlite3'
 end

@@ -198,6 +198,9 @@ $git push heroku master  //now works and you can follow the url and its working
 $heroko apps:rename familyweb
 $heroku open   //open app in browser
 
+//installed shoulda gem, to use must do the following
+$rake db:test:prepare
+
 
 
 
